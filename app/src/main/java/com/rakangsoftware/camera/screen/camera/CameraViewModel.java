@@ -1,15 +1,14 @@
 package com.rakangsoftware.camera.screen.camera;
 
+import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
 
 import com.otaliastudios.cameraview.Facing;
 import com.otaliastudios.cameraview.Flash;
 import com.otaliastudios.cameraview.Grid;
-import com.rakangsoftware.camera.R;
 
-
-class CameraViewModel extends ViewModel {
+class CameraViewModel extends AndroidViewModel {
 
     private PictureRepository mPictureRepository;
 
@@ -17,13 +16,17 @@ class CameraViewModel extends ViewModel {
     private MutableLiveData<Grid>   mGrid   = new MutableLiveData<>();
     private MutableLiveData<Facing> mFacing = new MutableLiveData<>();
 
-    public CameraViewModel() {
-        mPictureRepository = new PictureRepository();
+    public CameraViewModel(Application application) {
+        super(application);
+
+        mPictureRepository = new PictureRepository(application);
 
         mFLash.setValue(Flash.AUTO);
         mGrid.setValue(Grid.OFF);
         mFacing.setValue(Facing.BACK);
     }
+
+    /* Flash */
 
     MutableLiveData<Flash> getFLash() {
         return mFLash;
@@ -39,6 +42,8 @@ class CameraViewModel extends ViewModel {
         }
     }
 
+    /* Grid */
+
     MutableLiveData<Grid> getGrid() {
         return mGrid;
     }
@@ -51,6 +56,8 @@ class CameraViewModel extends ViewModel {
         }
     }
 
+    /* Facing */
+
     MutableLiveData<Facing> getFacing() {
         return mFacing;
     }
@@ -62,6 +69,8 @@ class CameraViewModel extends ViewModel {
             mFacing.setValue(Facing.BACK);
         }
     }
+
+    /* Save File */
 
     void saveFile(final byte[] picture) {
         mPictureRepository.create(picture);

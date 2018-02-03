@@ -27,15 +27,19 @@ public abstract class BaseActivity extends AppCompatActivity {
             if (shouldShowRequestPermissionRationale(this, permissions)) {
                 permissionsDenied(true);
             } else {
-                ActivityCompat.requestPermissions(
-                        this,
-                        permissions,
-                        PERMISSIONS_REQUEST
-                );
+                requestPermissions(permissions);
             }
         } else {
             permissionsGranted();
         }
+    }
+
+    protected void requestPermissions(final String[] permissions) {
+        ActivityCompat.requestPermissions(
+                this,
+                permissions,
+                PERMISSIONS_REQUEST
+        );
     }
 
     @Override

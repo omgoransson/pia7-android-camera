@@ -30,6 +30,8 @@ public class CameraActivity extends AppCompatActivity {
 
         mCameraView = findViewById(R.id.camera);
 
+        /* Flash */
+
         final ImageView flashButton = findViewById(R.id.flash_button);
         flashButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +53,8 @@ public class CameraActivity extends AppCompatActivity {
             }
         });
 
+        /* Grid */
+
         final ImageView gridButton = findViewById(R.id.grid_button);
         gridButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +73,8 @@ public class CameraActivity extends AppCompatActivity {
                 }
             }
         });
+
+        /* Facing */
 
         final ImageView facingButton = findViewById(R.id.facing_button);
         facingButton.setOnClickListener(new View.OnClickListener() {
@@ -89,17 +95,21 @@ public class CameraActivity extends AppCompatActivity {
             }
         });
 
-        mCameraView.addCameraListener(new CameraListener() {
-            @Override
-            public void onPictureTaken(byte[] picture) {
-                viewModel.saveFile(picture);
-            }
-        });
+        /* Capture Picture */
 
         findViewById(R.id.capture_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 mCameraView.capturePicture();
+            }
+        });
+
+        /* Save Picture */
+
+        mCameraView.addCameraListener(new CameraListener() {
+            @Override
+            public void onPictureTaken(byte[] picture) {
+                viewModel.saveFile(picture);
             }
         });
     }
@@ -121,6 +131,8 @@ public class CameraActivity extends AppCompatActivity {
         super.onDestroy();
         mCameraView.destroy();
     }
+
+    /* Start Function */
 
     public static void start(Context context) {
         context.startActivity(new Intent(context, CameraActivity.class));
