@@ -1,4 +1,4 @@
-package com.rakangsoftware.camera.screen.onboarding;
+package com.rakangsoftware.camera.screen;
 
 import android.Manifest;
 import android.app.Activity;
