@@ -1,17 +1,17 @@
 <resources>
-    <string name="app_name">Simple Cam</string>
-    <string name="folder_name">Simple Camera</string>
+  <string name="app_name">Simple Cam</string>
+  <string name="folder_name">Simple Camera</string>
 
-    <string name="permission_title">Permission denied</string>
-    <string name="dialog_explanation">Without these permissions the app is unable to take pictures and store on your device making this app useless. Are you sure you want to deny these permissions?</string>
+  <string name="permission_title">Permission denied</string>
+  <string name="dialog_explanation">Without these permissions the app is unable to take pictures and store on your device making this app useless. Are you sure you want to deny these permissions?</string>
 
-    <string name="dialog_imsure">I\'m sure</string>
-    <string name="dialog_retry">Re-try</string>
-    <string name="onboarding_title">Welcome!</string>
-    <string name="onboarding_text">Simple Camera is a camera app and rely on having permissions to use the camera. You will be asked to grant permission to the camera and read/write to disk. Please grant these.</string>
-    <string name="onboarding_understood">OK</string>
-    <string name="permission_denied">Permission denied</string>
-    <string name="permission_text">You have permanently denied the needed permissions and the app won\'t work. You can open the apps settings screen and approve the needed permissions.</string>
-    <string name="open_settings">Settings</string>
-    <string name="close_app">Close</string>
+  <string name="dialog_imsure">I\'m sure</string>
+  <string name="dialog_retry">Re-try</string>
+  <string name="onboarding_title">Welcome!</string>
+  <string name="onboarding_text">Simple Camera is a camera app and rely on having permissions to use the camera. You will be asked to grant permission to the camera and read/write to disk. Please grant these.</string>
+  <string name="onboarding_understood">OK</string>
+  <string name="permission_denied">Permission denied</string>
+  <string name="permission_text">You have permanently denied the needed permissions and the app won\'t work. You can open the apps settings screen and approve the needed permissions.</string>
+  <string name="open_settings">Settings</string>
+  <string name="close_app">Close</string>
 </resources>
