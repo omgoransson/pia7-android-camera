@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import com.rakangsoftware.camera.R;
 import com.rakangsoftware.camera.screen.BaseActivity;
+import com.rakangsoftware.camera.screen.camera.CameraActivity;
+import com.rakangsoftware.camera.screen.camera.CameraViewModel;
 import com.rakangsoftware.camera.screen.denied.DeniedActivity;
 
 public class OnboardingActivity extends BaseActivity {
@@ -34,6 +36,9 @@ public class OnboardingActivity extends BaseActivity {
     @Override
     protected void permissionsGranted() {
         // Will go to camera
+        CameraActivity.start(this);
+        overridePendingTransition(0,0);
+        finish();
 
     }
 
